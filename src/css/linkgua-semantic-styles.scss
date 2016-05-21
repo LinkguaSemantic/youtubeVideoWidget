@@ -1,0 +1,407 @@
+// Font Awesome
+@import "../../bower_components/components-font-awesome/scss/variables";
+// FIXME Este path tiene que ser absoluto, no relativo para la produccin
+$fa-font-path:        "bower_components/components-font-awesome/fonts";
+@import "../../bower_components/components-font-awesome/scss/mixins";
+@import "../../bower_components/components-font-awesome/scss/path";
+@import "../../bower_components/components-font-awesome/scss/core";
+@import "../../bower_components/components-font-awesome/scss/larger";
+@import "../../bower_components/components-font-awesome/scss/fixed-width";
+@import "../../bower_components/components-font-awesome/scss/list";
+@import "../../bower_components/components-font-awesome/scss/bordered-pulled";
+@import "../../bower_components/components-font-awesome/scss/animated";
+@import "../../bower_components/components-font-awesome/scss/rotated-flipped";
+@import "../../bower_components/components-font-awesome/scss/stacked";
+@import "../../bower_components/components-font-awesome/scss/icons";
+@import "../../bower_components/components-font-awesome/scss/screen-reader";
+
+
+@import "linkgua-semantic-animations";
+
+
+
+
+a.wm_wikifiedLink {
+  text-decoration: none;
+  color: initial;
+  border-bottom: 1px dashed #bbb;
+
+  &:hover::after{
+
+    font-family: 'FontAwesome';
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    display: inline-block;
+    vertical-align: super;
+    //content: "\f1c8";
+
+    font-size: .4em;
+    position: absolute;
+    color: #e52d27;   //youTube Color.
+    content: "\f16a";
+    margin-top: -.5em;
+    margin-left: -1em;
+    @include animation-target2();
+  }
+}
+
+
+
+$topMarging: 5vh;
+
+$overlayLayout: 1000000;
+$firstLayout: 1000010;
+$secondLayout: 1000020;
+$thirdLayout: 1000030;
+
+//Widget Styles Wrapper.
+.lks-video-widget-wrapper {
+
+  //init hidden
+  display: none;
+
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $overlayLayout;
+
+  .lks-img-loading-wrapper {
+    text-align: center;
+    margin-top: 11vw;
+
+    > img {
+      position: relative;
+      z-index: $firstLayout;
+      border-radius: 50%;
+    }
+  }
+
+  .lks-overlay, .lks-overlay-info {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #000000;
+    opacity: 0.85;
+    z-index: $overlayLayout;
+  }
+
+  .lks-overlay-info {
+    z-index: $overlayLayout;
+  }
+
+  .lks-info-content, .lks-share-content {
+    @include animation-target1();
+    z-index: $secondLayout;
+    position: absolute;
+    top: 50px;
+    width: 20vw;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: justify;
+
+    overflow-y: auto; /* TODO Mejorar visual cuando hay overflow en la info de la entidad */
+
+    @media (max-width: 750px){
+      width: calc(100vw - 40px);
+    }
+
+    .lks-info-content-title {
+      font-size: 14px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+    .lks-info-content-abstract {
+      font-size: 12px;
+      opacity: .8;
+    }
+    .fa.fa-times {
+      left: 15px;
+      top: 15px;
+    }
+  }
+
+  .lks-share-content{
+    top: 150px;
+    height: auto;
+    width: 100px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    z-index: $firstLayout;
+  }
+
+  .fa.fa-times {
+    font-size: 36px;
+    position: absolute;
+    right: 3vw;
+    top: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: lighter;
+    z-index: $secondLayout;
+
+    @media (max-width: 750px) {
+      font-size: 48px;
+      top: 0;
+    }
+  }
+
+  .fa.fa-info-circle {
+    font-size: 36px;
+    position: absolute;
+    right: 3vw;
+    top: 60px;
+    color: white;
+    cursor: pointer;
+    z-index: $secondLayout;
+
+    @media (max-width: 750px) {
+      font-size: 42px;
+      top: 0.6vw;
+      right: 18vw;
+    }
+  }
+
+  .fa.fa-share {
+    font-size: 30px;
+    position: absolute;
+    right: 3vw;
+    top: 100px;
+    color: white;
+    cursor: pointer;
+    z-index: $secondLayout;
+
+    @media (max-width: 750px) {
+      font-size: 42px;
+      top: 0.6vw;
+      right: 33vw;
+    }
+  }
+
+  .lks-iframe-wrapper {
+    margin-top: 2vh;
+  }
+
+  .lks-yt-player-iframe-container {
+    text-align: center;
+    margin-top: 6%;
+
+
+    .lks-yt-player-info {
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, sans-serif;
+      position: relative;
+      z-index: $firstLayout;
+
+      .lks-yt-player-channel-info {
+        clear: both;
+        width: 100%;
+        img.lks-img-profile {
+          max-width: 40px;
+          float: left;
+          margin-right: 10px;
+        }
+        .lks-yt-player-info-header {
+          margin-top: 20px;
+          margin-bottom: 10px;
+
+          p.lks-yt-player-channel-title {
+            color: #fff;
+            font-size: 14px;
+            padding-top: 5px;
+            margin: 0;
+            padding-bottom: 8px;
+          }
+
+          p.lks-yt-player-video-posted-date {
+            color: #7f7f7f;
+            font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 12px;
+            margin: 0;
+          }
+
+        }
+      }
+
+      .lks-yt-player-video-title {
+        color: #b2b2b2;
+        font-size: 12px;
+      }
+
+    }
+
+    .lks-powered-by {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: right;
+      padding-top: 10px;
+      font-size: 12px;
+      opacity: .7;
+      font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, sans-serif;
+      z-index: $firstLayout;
+      position: relative;
+
+      > a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .lks-yt-player-iframe {
+    @include animation-target2();
+    margin-top: 20px;
+    /* width: 70vw; */
+    /* height: 39.2vw; */
+    max-width: 1000px;
+    max-height: 561px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .8), 0 0 0 1px rgba(0, 0, 0, .2);
+    z-index: $firstLayout;
+    position: relative;
+
+    @media (max-width: 750px) {
+      width: 100vw;
+      height: 56.1vw;
+    }
+  }
+  .lks-selector {
+    position: absolute;
+    width: 97.5vw;
+    left: 1.6vw;
+    bottom: 20px;
+    overflow: hidden;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+
+    @media (max-width: 750px) {
+      /* TODO mejorar posicionamiento vertical */
+      top: 94vw; //todo: fijar al bottom no al top.
+    }
+
+    .lks-selector-content {
+      width: 100000vw;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      z-index: $firstLayout;
+    }
+
+    .fa {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: -moz-none;
+
+      @media (max-width: 690px) {
+        font-size: 48px !important;
+        top: 25px !important;
+      }
+      /*@media (min-width: 1700px) {
+        font-size: 102px !important;
+        top: 51px !important;
+      }*/
+    }
+
+    .fa {
+      position: absolute;
+      bottom: 15px;
+      font-size: 7vw;
+      color: white;
+      cursor: pointer;
+      z-index: $secondLayout;
+      &.fa-angle-left {
+        left: 0;
+      }
+      &.fa-angle-right {
+        right: 0;
+      }
+    }
+
+    .lks-video-item {
+      width: 16vw;
+      height: 9vw;
+      cursor: pointer;
+      margin-right: .5vw;
+      max-height: 204px;
+      max-width: 271px;
+      min-width: 132px;
+      min-height: 100px;
+
+      position: relative;
+
+      z-index: $firstLayout;
+
+      .lks-video-overlay-info {
+        display: none;
+        opacity: 0;
+        -webkit-transition: opacity .15s ease-in-out;
+        -moz-transition: opacity .15s ease-in-out;
+        -ms-transition: opacity .15s ease-in-out;
+        -o-transition: opacity .15s ease-in-out;
+        transition: opacity .15s ease-in-out;
+      }
+
+      > .lks-video-item-image {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0px;
+      }
+
+      &:hover {
+        .lks-video-overlay-info {
+          opacity: 1;
+          font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, sans-serif;
+          display: block;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+
+
+          color: white;
+          background: rgba(0, 0, 0, 0.7);
+          margin: 0;
+          padding: 0;
+          .lks-video-overlay-info-channel {
+            font-size: 14px;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          .lks-video-overlay-info-title {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            opacity: .8;
+          }
+        }
+      }
+
+    }
+  }
+}

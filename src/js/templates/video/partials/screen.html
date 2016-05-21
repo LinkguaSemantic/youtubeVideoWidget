@@ -1,0 +1,19 @@
+{{#screenVideo}}
+<div class="lks-yt-player-iframe-container" on-click="hideWidget">
+    <div class="lks-yt-player-info" style="width: 600px;">
+        <div class="lks-yt-player-channel-info">
+            <img class="lks-img-profile" src="{{channelInfo.snippet.thumbnails.default.url}}"
+                 alt="{{snippet.channelTitle}}">
+            <div class="lks-yt-player-info-header">
+                <p class="lks-yt-player-channel-title">{{snippet.channelTitle}}</p>
+                <p class="lks-yt-player-video-posted-date">{{snippet.publishedAt}}</p>
+            </div>
+        </div>
+        <div class="lks-yt-player-video-title">{{snippet.title}}</div>
+    </div>
+    <div class="lks-yt-player-iframe" id="lks-yt-player-iframe" data-videoid="{{ videoid }}"></div>
+    <div class="lks-powered-by" style="width: 600px;">
+        <a style="cursor: pointer" on-click="openLinkguaPage">Powered by <span class="lks-brand-name">Linkgua Semantic</span></a>
+    </div>
+</div>
+{{/screenVideo}}

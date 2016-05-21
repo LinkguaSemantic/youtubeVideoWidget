@@ -1,0 +1,43 @@
+{
+  "name": "lks-analytics-widget",
+  "authors": [
+    "rubenlangherrera <ruben.lh@gmail.com>"
+  ],
+  "description": "Analytics Js Client on Linkgua Semantic Analytics system.",
+  "main": "",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "linkgua",
+    "semantic",
+    "analytics",
+    "javascript",
+    "client",
+    "analytics",
+    "reader"
+  ],
+  "license": "Private",
+  "homepage": "linkgua-semantic.com/services/analitycs",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "almond": "^0.3.1",
+    "text": "requirejs-text#^2.0.14",
+    "ractive": "^0.7.3",
+    "rv": "requirejs-ractive#^0.1.8",
+    "jquery-i18n": "1.1.1",
+    "ractive-touch": "^0.4.0",
+    "hammerjs": "^2.0.8",
+    "components-font-awesome": "^4.6.1",
+    "moment": "^2.13.0"
+  }
+}

@@ -1,0 +1,9 @@
+.idea
+*.iml
+node_modules/
+bower_components/
+build/
+dist/
+.sass-cache/
+linkgua-semantic-styles.css
+linkgua-semantic-styles.css.map

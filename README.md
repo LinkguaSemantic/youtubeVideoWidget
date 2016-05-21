@@ -1,7 +1,4 @@
-
 # Linkgua Semantic Video JavaScript Widget. (v1.0.0)
-
-Using the Linkgua Semantic Api this widget give the possibility to show YouTube Videos over any entity found in the selected text. 
 
 Bring Youtube over your texts. 
 
@@ -76,4 +73,4 @@ https://www.linkgua-semantic.com/demo/videowidget
 https://www.linkgua-semantic.com/docs/videowidget
 
 ### Linkgua Semantic Api Documentation: 
-https://www.linkgua-semantic.com/docs/
+

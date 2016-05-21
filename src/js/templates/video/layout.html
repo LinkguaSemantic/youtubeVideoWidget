@@ -1,0 +1,29 @@
+<div class="lks-overlay" on-click="hideWidget"></div>
+{{#if haveVideos}}
+    <i class="fa fa-times" on-click="hideWidget" aria-hidden="true"></i>
+    <i class="fa fa-info-circle" aria-hidden="true" on-click="seeInfo"></i>
+    <i class="fa fa-share" aria-hidden="true" on-click="shareBox"></i>
+    <div class="lks-iframe-wrapper">
+        {{>screen}}
+    </div>
+    <div class="lks-carousel-wrapper">
+        {{>carousel}}
+    </div>
+    {{#if seeInfoBool}}
+        <!--<div class="lks-overlay-info" on-click="hideInfo"></div>-->
+        <div class="lks-info-content">
+            <i class="fa fa-times" on-click="hideInfo" aria-hidden="true"></i>
+            <div class="lks-info-content-title">{{ selectedEntity.InfoData.label.value }}</div>
+            <div class="lks-info-content-abstract">{{ selectedEntity.InfoData.description.value }}</div>
+        </div>
+    {{/if}}
+    {{#if seeShareBool}}
+        <div class="lks-share-content">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ shareUrl }}">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ shareUrlURI }}&layout=button&mobile_iframe=true&width=80&height=20&appId" width="80" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+    {{/if}}
+{{else}}
+    {{>loading}}
+{{/if}}

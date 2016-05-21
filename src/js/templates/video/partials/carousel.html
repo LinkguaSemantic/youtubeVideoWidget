@@ -1,0 +1,15 @@
+<div class="lks-selector">
+    {{#if leftArrowSee}}<i class="fa fa-angle-left" aria-hidden="true" on-click="minusPage"></i>{{/if}}
+    <div class="lks-selector-content" on-pan="movePan">
+        {{#items:i}}
+        <div data-id="{{id.videoId}}" class="lks-video-item img{{i}}" on-click="selectVideo">
+            <div class="lks-video-overlay-info">
+                <p class="lks-video-overlay-info-channel">{{snippet.channelTitle}}</p>
+                <p class="lks-video-overlay-info-title">{{snippet.title}}</p>
+            </div>
+            <div class="lks-video-item-image" style="background-image: url({{snippet.thumbnails.high.url}});" title="{{snippet.title}}"></div>
+        </div>
+        {{/items}}
+    </div>
+    {{#if rightArrowSee}}<i class="fa fa-angle-right" aria-hidden="true" on-click="plusPage"></i>{{/if}}
+</div>
