@@ -76,4 +76,4 @@ https://www.linkgua-semantic.com/demo/videowidget
 https://www.linkgua-semantic.com/docs/videowidget
 
 ### Linkgua Semantic Api Documentation: 
-
+https://www.linkgua-semantic.com/docs/
