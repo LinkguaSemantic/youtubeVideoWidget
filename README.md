@@ -1,6 +1,6 @@
 # Linkgua Semantic Video JavaScript Widget. (v1.0.0)
 
-Bring Youtube over your texts. 
+Bring #YouTube over any keyword on your text. #Engage your audience, with Videos. Improve your SEO ranking & enhance your Digital Content with Linkgua Semantic.
 
 
 ## Build
