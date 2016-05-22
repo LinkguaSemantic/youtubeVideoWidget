@@ -9,7 +9,7 @@ You must compile the  src/ files.
 ### Architecture: 
 - Based on ReactiveJs (http://www.ractivejs.org/)
 
-### Dependencias
+### Dependencies
     - node
     - bower
     - grunt
